@@ -20,7 +20,7 @@ class AppBarStyling extends StatelessWidget {
             children: [
               Text(
                 "Hello, Haseeb",
-                style: Heading1.Medium30px.copyWith(color: CustColors.black1),
+                style: Heading3.Medium20px.copyWith(color: CustColors.black1),
               ),
               Icon(
                 Icons.card_travel,

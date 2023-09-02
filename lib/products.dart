@@ -1,4 +1,3 @@
-
 List products = [
   {
     "id": 1,
@@ -606,3 +605,105 @@ List products = [
     "favotrite": false,
   }
 ];
+
+Map<dynamic, dynamic> productCategories = {
+  0: {
+    "id": 1,
+    "title": "iPhone 9",
+    "description": "An apple mobile which is nothing like apple",
+    "price": 549,
+    "discountPercentage": 12.96,
+    "rating": 4.69,
+    "stock": 94,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ],
+    "favotrite": false,
+  },
+  1: {
+    "id": 6,
+    "title": "MacBook Pro",
+    "description":
+        "MacBook Pro 2021 with mini-LED display may launch between September, November",
+    "price": 1749,
+    "discountPercentage": 11.02,
+    "rating": 4.57,
+    "stock": 83,
+    "brand": "Apple",
+    "category": "laptops",
+    "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+    "images": [
+      "https://i.dummyjson.com/data/products/6/1.png",
+      "https://i.dummyjson.com/data/products/6/2.jpg",
+      "https://i.dummyjson.com/data/products/6/3.png",
+      "https://i.dummyjson.com/data/products/6/4.jpg"
+    ],
+    "favotrite": false,
+  },
+  2: {
+    "id": 11,
+    "title": "perfume Oil",
+    "description":
+        "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
+    "price": 13,
+    "discountPercentage": 8.4,
+    "rating": 4.26,
+    "stock": 65,
+    "brand": "Impression of Acqua Di Gio",
+    "category": "fragrances",
+    "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/11/1.jpg",
+      "https://i.dummyjson.com/data/products/11/2.jpg",
+      "https://i.dummyjson.com/data/products/11/3.jpg",
+      "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
+    ],
+    "favotrite": false,
+  },
+  3: {
+    "id": 16,
+    "title": "Hyaluronic Acid Serum",
+    "description":
+        "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
+    "price": 19,
+    "discountPercentage": 13.31,
+    "rating": 4.83,
+    "stock": 110,
+    "brand": "L'Oreal Paris",
+    "category": "skincare",
+    "thumbnail": "https://i.dummyjson.com/data/products/16/thumbnail.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/16/1.png",
+      "https://i.dummyjson.com/data/products/16/2.webp",
+      "https://i.dummyjson.com/data/products/16/3.jpg",
+      "https://i.dummyjson.com/data/products/16/4.jpg",
+      "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
+    ],
+    "favotrite": false,
+  },
+  4: {
+    "id": 21,
+    "title": "- Daal Masoor 500 grams",
+    "description": "Fine quality Branded Product Keep in a cool and dry place",
+    "price": 20,
+    "discountPercentage": 4.81,
+    "rating": 4.44,
+    "stock": 133,
+    "brand": "Saaf & Khaas",
+    "category": "groceries",
+    "thumbnail": "https://i.dummyjson.com/data/products/21/thumbnail.png",
+    "images": [
+      "https://i.dummyjson.com/data/products/21/1.png",
+      "https://i.dummyjson.com/data/products/21/2.jpg",
+      "https://i.dummyjson.com/data/products/21/3.jpg"
+    ],
+    "favotrite": false,
+  },
+};
