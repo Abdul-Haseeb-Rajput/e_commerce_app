@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../products.dart';
+import '../../products_dummy_api.dart';
 import '../../styles/colors.dart';
 import '../../styles/text_styles.dart';
+import '../Widgets/products_card_widget.dart';
 import 'appbar_styling_widget.dart';
 import 'list_view_horizontal.dart';
 
@@ -60,76 +61,26 @@ class HomeScreenPageView extends StatelessWidget {
                 height: 4,
               ),
               GridView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: products.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      mainAxisExtent: 250,
-                      mainAxisSpacing: 8,
-                      crossAxisSpacing: 8,
-                      crossAxisCount: 2),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        color: CustColors.black10,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Stack(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ClipRRect(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(16)),
-                              child: Image.network(
-                                "${products[index]['thumbnail']}",
-                                height: 150,
-                                width: double.infinity,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            top: 140,
-                            right: 20,
-                            child: GestureDetector(
-                              onTap: () {
-                                // print('$index tapped');
-                              },
-                              child: CircleAvatar(
-                                backgroundColor: CustColors.darkBlue,
-                                foregroundColor: CustColors.black1,
-                                radius: 15,
-                                child: Icon(Icons.add),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 20,
-                            left: 10,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "\$ ${products[index]['price']}",
-                                  style: Body2.Medium14px,
-                                ),
-                                Text(
-                                  "${products[index]['title']}",
-                                  style: Body2.Medium14px,
-                                ),
-                                Text(
-                                  "Unit: ${products[index]['stock']}",
-                                  style: Body2.Medium14px,
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  })
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: products.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisExtent: 250,
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8,
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  return ProductsCardWidget(
+                    index: index,
+                    listName: products,
+                    thumbnail: 'thumbnail',
+                    price: 'price',
+                    title: 'title',
+                    stock: 'stock',
+                    stockIsEmpty: false,
+                  );
+                },
+              ),
             ],
           ),
         ),

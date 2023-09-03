@@ -1,4 +1,5 @@
-import 'package:e_commerce_app/products.dart';
+import 'package:e_commerce_app/products_dummy_api.dart';
+import 'package:e_commerce_app/screens/categories_screen/view_by_categories.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -32,41 +33,56 @@ class CategoriesScreen extends StatelessWidget {
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10),
                 itemBuilder: (BuildContext, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: CustColors.black10,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Column(
-                      children: [
-                        // Image.network(
-                        //   "${productCategories[index][index]['thumbnail']}",
-                        // ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
-                            child: Image.network(
-                              "${productCategories[index]['thumbnail']}",
-                              height: 120,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
+                  return GestureDetector(
+                    onTap: () {
+                      print(index);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (buildContext) => ViewByCategories(
+                                    indexForCategory: index,
+                                  )));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: CustColors.black10,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(16),
+                              child: Image.network(
+                                "${productCategories[index]['thumbnail']}",
+                                height: 120,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        Text(
-                          "${productCategories[index]['category']}",
-                          style: Heading4.Bold18px,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Text(
-                            "${productCategories[index]['description']}",
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Text(
+                              "${productCategories[index]['category']}",
+                              style: Heading4.Bold18px,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Text(
+                              "${productCategories[index]['description']}",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },

@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/products.dart';
+import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:e_commerce_app/screens/favorite_screen/favourite_screen.dart';
 import 'package:e_commerce_app/styles/colors.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
