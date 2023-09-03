@@ -20,13 +20,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentPageIndex = 0;
-  final List<Widget> _pages = [
-    HomeScreenPageView(),
-    CategoriesScreen(),
-    FavouriteScreen(),
-    MoreScreen(),
-  ];
+  // int currentPageIndex = 0;
+  // final List<Widget> _pages = [
+  //   HomeScreenPageView(),
+  //   CategoriesScreen(),
+  //   FavouriteScreen(),
+  //   MoreScreen(),
+  // ];
+
+  int _selectedIndex = 0;
+  final PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,15 +39,25 @@ class _HomeScreenState extends State<HomeScreen> {
       //   toolbarHeight: MediaQuery.of(context).size.height * .35,
       //   flexibleSpace: AppBarStyling(),
       // ),
-      body: _pages[_currentPageIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentPageIndex,
-        onTap: (index) {
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: (page) {
           setState(() {
-            _currentPageIndex = index;
+            _selectedIndex = page;
           });
         },
-        selectedItemColor: CustColors.black100,
+        children: <Widget>[
+          HomeScreenPageView(),
+          CategoriesScreen(),
+          FavouriteScreen(),
+          MoreScreen(),
+        ],
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _onTappedBar,
+        selectedItemColor: CustColors.darkYellow,
+        currentIndex: _selectedIndex,
         unselectedItemColor: CustColors.black60,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
@@ -56,5 +69,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  void _onTappedBar(int value) {
+    setState(() {
+      _selectedIndex = value;
+    });
+    _pageController.jumpToPage(value);
   }
 }
