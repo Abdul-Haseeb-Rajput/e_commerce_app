@@ -25,8 +25,8 @@ class _ProductScreenState extends State<ProductScreen> {
   Widget build(BuildContext context) {
     int itForInd = widget.indexForItem;
     List imgLen = products[0]['images'];
-    List imgL = abc[widget.indexForItem];
-    List im = abc[widget.indexForItem];
+    List imgL = prodsImgs[widget.indexForItem];
+    List im = prodsImgs[widget.indexForItem];
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
@@ -70,7 +70,7 @@ class _ProductScreenState extends State<ProductScreen> {
                         },
                         child: Container(
                           child: Image.network(
-                              "${abc[widget.indexForItem][index]}"),
+                              "${prodsImgs[widget.indexForItem][index]}"),
                           // backgroundColor: const Color.fromARGB(255, 29, 52, 71),
                           // foregroundImage:
                           //     NetworkImage("${imagesWithoutBrackets[index]}"),
