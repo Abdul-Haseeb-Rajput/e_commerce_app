@@ -74,21 +74,60 @@ class AddToCartScreen extends StatelessWidget {
                   bottom: 0,
                   child: Container(
                     height: 40,
-                    width: double.infinity,
+                    width: MediaQuery.of(context).size.width,
                     color: CustColors.darkYellow,
                   ),
                 ),
                 Positioned(
                   bottom: 10,
-                  left: 32,
+                  left: 36,
                   child: Text(
-                    "Use code #HalalFood at Checkouut",
+                    "Use code #HalalFood at Checkout",
                     style:
                         Body1.SemiBold16px.copyWith(color: CustColors.black90),
                   ),
                 ),
+                Positioned(
+                  right: 30,
+                  top: 20,
+                  child: Image.asset(
+                    "assets/svgs/zigzag.png",
+                    width: 120,
+                  ),
+                ),
               ],
             ),
+          ),
+          Column(
+            children: [
+              Container(
+                color: CustColors.black45,
+                height: MediaQuery.of(context).size.height * .6,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: 6,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 0, vertical: 4),
+                              child: ListTile(
+                                leading: CircleAvatar(
+                                  radius: 30,
+                                ),
+                                title: Text("Title"),
+                                subtitle: Text("Price"),
+                              ),
+                            );
+                          }),
+                    ],
+                  ),
+                ),
+              )
+            ],
           ),
         ],
       ),
