@@ -1356,24 +1356,6 @@ List categories = [
   groceries,
 ];
 
-Map images = {
-  0: [
-    "https://i.dummyjson.com/data/products/1/1.jpg",
-    "https://i.dummyjson.com/data/products/1/3.jpg",
-    "https://i.dummyjson.com/data/products/1/4.jpg",
-    "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
-  ],
-  1: {
-    "https://i.dummyjson.com/data/products/2/1.jpg",
-    "https://i.dummyjson.com/data/products/2/2.jpg",
-    "https://i.dummyjson.com/data/products/2/3.jpg",
-    "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-  },
-  2: {},
-  3: {},
-  4: {},
-};
-
 List prodsImgs = [
   [
     "https://i.dummyjson.com/data/products/1/1.jpg",
@@ -1567,5 +1549,6 @@ List prodsImgs = [
     "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
   ],
 ];
-  // print(images[0][1]);
-  
+// print(images[0][1]);
+
+List cartItems = [];

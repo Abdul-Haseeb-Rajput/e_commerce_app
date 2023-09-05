@@ -24,7 +24,7 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     int itForInd = widget.indexForItem;
-    List imgLen = products[0]['images'];
+    // List imgLen = products[0]['images'];
     List imgL = prodsImgs[widget.indexForItem];
     List im = prodsImgs[widget.indexForItem];
     return Scaffold(
@@ -74,12 +74,12 @@ class _ProductScreenState extends State<ProductScreen> {
                             color: CustColors.black45,
                             // borderRadius: BorderRadius.circular(8),
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(200),
-                            child: Image.network(
-                                "${prodsImgs[widget.indexForItem][index]}"),
+                          child: CircleAvatar(
+                            backgroundColor: Color.fromARGB(0, 29, 52, 71),
+                            foregroundImage: NetworkImage(
+                                "${prodsImgs[widget.indexForItem][index]}",
+                                scale: 0.1),
                           ),
-                          // backgroundColor: const Color.fromARGB(255, 29, 52, 71),
                           // foregroundImage:
                           //     NetworkImage("${imagesWithoutBrackets[index]}"),
                           // radius: MediaQuery.of(context).size.width * .32,
@@ -113,7 +113,7 @@ class _ProductScreenState extends State<ProductScreen> {
             Row(
               children: [
                 Text(
-                  "Title : Thin chieese \ntop orangea",
+                  "${products[widget.indexForItem]["title"]}",
                   style: Heading3.SemiBold20px,
                   textAlign: TextAlign.left,
                 ),
@@ -131,7 +131,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Priceeee",
+                      "\$${products[widget.indexForItem]["price"]}",
                       style: Body1.SemiBold16px.copyWith(
                           color: CustColors.lightBlue),
                     ),
@@ -147,7 +147,7 @@ class _ProductScreenState extends State<ProductScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          "Discounttt",
+                          "${products[widget.indexForItem]["discountPercentage"]}% off",
                           style: Label.Medium12px.copyWith(
                               color: CustColors.black1),
                         ),
@@ -278,10 +278,9 @@ class _ProductScreenState extends State<ProductScreen> {
                           height: 8,
                         ),
                         Text(
-                          "Praesent commodo cursus magna, vel scelerisque nisl ursus magna, vel consectetur et"
-                          "Nullam quis risus eget urna quis risus eget urna mollis ornare vel eu leo.",
+                          "${products[widget.indexForItem]["description"]}",
                           textAlign: TextAlign.justify,
-                          style: Label.Medium12px.copyWith(),
+                          style: Body2.Medium14px.copyWith(),
                         ),
                         SizedBox(
                           height: 20,
@@ -299,14 +298,14 @@ class _ProductScreenState extends State<ProductScreen> {
                           },
                           itemBuilder: (context, index) {
                             return ExpansionTile(
-                              title: Text("Haseeb"),
+                              title: Text("Details"),
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "helloo sdsdsd dfdfdf jfdn fdfndn  nfdhfdfsd f fhsdhfd f",
+                                      "${products[widget.indexForItem]["description"]}",
                                       textAlign: TextAlign.left,
                                     ),
                                   ],
