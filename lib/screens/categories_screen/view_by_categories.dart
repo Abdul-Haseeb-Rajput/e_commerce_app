@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -7,15 +8,21 @@ import '../../styles/colors.dart';
 // import '../Widgets/products_card_widget.dart';
 
 // ignore: must_be_immutable
-class ViewByCategories extends StatelessWidget {
+class ViewByCategories extends StatefulWidget {
   int indexForCategory;
   ViewByCategories({
     super.key,
     required this.indexForCategory,
   });
+
+  @override
+  State<ViewByCategories> createState() => _ViewByCategoriesState();
+}
+
+class _ViewByCategoriesState extends State<ViewByCategories> {
   @override
   Widget build(BuildContext context) {
-    List itemLeng = categories[indexForCategory];
+    List itemLeng = categories[widget.indexForCategory];
 
     return Scaffold(
       appBar: AppBar(
@@ -32,19 +39,62 @@ class ViewByCategories extends StatelessWidget {
         ),
         title: Text(
           //for showing text title in appbar
-          "${categories[indexForCategory][indexForCategory]['category']}",
+          "${categories[widget.indexForCategory][widget.indexForCategory]['category']}",
           style: Heading3.Regular20px.copyWith(color: CustColors.black100),
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
-            color: CustColors.black100,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.card_travel),
-            color: CustColors.black100,
+          Container(
+            margin: EdgeInsets.only(right: 10, top: 8),
+            height: double.infinity,
+            width: 100,
+            // color: CustColors.black60,
+            child: Stack(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.search),
+                      color: CustColors.black100,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddToCartScreen()));
+                      },
+                      child: Icon(
+                        Icons.card_travel,
+                        color: CustColors.black100,
+                      ),
+                    ),
+                  ],
+                ),
+                Positioned(
+                  top: 2,
+                  right: 0,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddToCartScreen()));
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: CustColors.lightYellow,
+                      radius: 12,
+                      child: Text(
+                        "${cartItems.length}",
+                        style:
+                            Label.Medium12px.copyWith(color: CustColors.black1),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -63,6 +113,7 @@ class ViewByCategories extends StatelessWidget {
               return GestureDetector(
                 onTap: () {
                   print('container index $index');
+                  // print(cartItems.length);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -76,7 +127,7 @@ class ViewByCategories extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.all(Radius.circular(16)),
                           child: Image.network(
-                            "${categories[indexForCategory][index]['thumbnail']}",
+                            "${categories[widget.indexForCategory][index]['thumbnail']}",
                             height: 150,
                             width: double.infinity,
                             fit: BoxFit.cover,
@@ -89,6 +140,9 @@ class ViewByCategories extends StatelessWidget {
                         child: GestureDetector(
                           onTap: () {
                             print('$index tapped');
+                            cartItems.add(
+                                categories[widget.indexForCategory][index]);
+                            print(cartItems);
                           },
                           child: CircleAvatar(
                             backgroundColor: CustColors.darkBlue,
@@ -106,15 +160,15 @@ class ViewByCategories extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "${categories[indexForCategory][index]['title']}",
+                              "${categories[widget.indexForCategory][index]['title']}",
                               style: Body2.Medium14px,
                             ),
                             Text(
-                              "\$${categories[indexForCategory][index]['price']}",
+                              "\$${categories[widget.indexForCategory][index]['price']}",
                               style: Body2.Medium14px,
                             ),
                             Text(
-                              "units:${categories[indexForCategory][index]['stock']}",
+                              "units:${categories[widget.indexForCategory][index]['stock']}",
                               style: Body2.Medium14px,
                             ),
                           ],

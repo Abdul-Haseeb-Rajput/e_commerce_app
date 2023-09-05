@@ -1,10 +1,13 @@
+import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:flutter/material.dart';
 
 import '../../styles/colors.dart';
 import '../../styles/text_styles.dart';
 
 class AppBarStyling extends StatelessWidget {
-  const AppBarStyling({
+  void Function()? onTap;
+  AppBarStyling({
+    required this.onTap,
     super.key,
   });
 
@@ -17,15 +20,43 @@ class AppBarStyling extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "Hello, Haseeb",
                 style: Heading3.Medium20px.copyWith(color: CustColors.black1),
               ),
-              Icon(
-                Icons.card_travel,
-                color: CustColors.black1,
-                size: 25,
+              GestureDetector(
+                onTap: onTap,
+                child: Center(
+                  child: Stack(
+                    children: [
+                      Container(
+                        // color: CustColors.black90,
+                        height: 60,
+                        width: 40,
+                        child: Icon(
+                          Icons.card_travel,
+                          color: CustColors.black1,
+                          size: 25,
+                        ),
+                      ),
+                      Positioned(
+                        top: 2,
+                        right: 0,
+                        child: CircleAvatar(
+                          backgroundColor: CustColors.lightYellow,
+                          radius: 12,
+                          child: Text(
+                            "${cartItems.length}",
+                            style: Label.Medium12px.copyWith(
+                                color: CustColors.black1),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),

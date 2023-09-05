@@ -112,10 +112,16 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
             Row(
               children: [
-                Text(
-                  "${products[widget.indexForItem]["title"]}",
-                  style: Heading3.SemiBold20px,
-                  textAlign: TextAlign.left,
+                Container(
+                  // color: CustColors.lightYellow,
+                  width: MediaQuery.of(context).size.width * .9,
+                  child: Text(
+                    "${products[widget.indexForItem]["title"]}",
+                    style: Heading4.Bold18px,
+                    textAlign: TextAlign.left,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
                 ),
               ],
             ),

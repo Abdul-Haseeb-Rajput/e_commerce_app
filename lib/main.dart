@@ -22,7 +22,7 @@ class _ECommerceAppState extends State<ECommerceApp> {
     return const SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: AddToCartScreen(),
+        home: Onbording(),
       ),
     );
   }

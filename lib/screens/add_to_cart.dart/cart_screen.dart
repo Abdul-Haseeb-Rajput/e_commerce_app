@@ -1,11 +1,28 @@
+import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:e_commerce_app/screens/home_screen/appbar_styling_widget.dart';
 import 'package:e_commerce_app/screens/onboard_screens/widget/cust_text_botton.dart';
 import 'package:e_commerce_app/styles/colors.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
 import 'package:flutter/material.dart';
 
-class AddToCartScreen extends StatelessWidget {
+class AddToCartScreen extends StatefulWidget {
   const AddToCartScreen({super.key});
+
+  @override
+  State<AddToCartScreen> createState() => _AddToCartScreenState();
+}
+
+class _AddToCartScreenState extends State<AddToCartScreen> {
+  // int quantity = 1;
+
+  List<int> quantities = List.filled(cartItems.length, 1);
+  double calculateSubtotal() {
+    double subtotal = 0.0;
+    for (int i = 0; i < cartItems.length; i++) {
+      subtotal += quantities[i] * cartItems[i]['price'];
+    }
+    return subtotal;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +47,17 @@ class AddToCartScreen extends StatelessWidget {
                 Positioned(
                   top: 16,
                   left: 16,
-                  child: CircleAvatar(
-                    backgroundColor: CustColors.black10,
-                    child: Icon(
-                      Icons.arrow_back_ios_rounded,
-                      color: CustColors.black100,
-                      size: 18,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: CustColors.black10,
+                      child: Icon(
+                        Icons.arrow_back_ios_rounded,
+                        color: CustColors.black100,
+                        size: 18,
+                      ),
                     ),
                   ),
                 ),
@@ -110,14 +132,16 @@ class AddToCartScreen extends StatelessWidget {
                       ListView.builder(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
-                        itemCount: 6,
+                        itemCount: cartItems.length,
                         itemBuilder: (context, index) {
                           return ListTile(
                             leading: CircleAvatar(
                               radius: 30,
+                              backgroundImage: NetworkImage(
+                                  "${cartItems[index]['thumbnail']}"),
                             ),
-                            title: Text("Title"),
-                            subtitle: Text("Price"),
+                            title: Text("${cartItems[index]['title']}"),
+                            subtitle: Text("\$${cartItems[index]['price']}"),
                             trailing: Container(
                               // color: CustColors.black45,
                               width: 100,
@@ -126,26 +150,47 @@ class AddToCartScreen extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  CircleAvatar(
-                                    backgroundColor: CustColors.black10,
-                                    foregroundColor: CustColors.black100,
-                                    radius: 16,
-                                    child: Icon(
-                                      Icons.remove,
-                                      size: 16,
+                                  GestureDetector(
+                                    onTap: () {
+                                      print("Minus pressed $index");
+                                      setState(() {
+                                        quantities[index] =
+                                            quantities[index] > 1
+                                                ? quantities[index] - 1
+                                                : quantities[index];
+                                        print(quantities[index]);
+                                      });
+                                    },
+                                    child: CircleAvatar(
+                                      backgroundColor: CustColors.black10,
+                                      foregroundColor: CustColors.black100,
+                                      radius: 16,
+                                      child: Icon(
+                                        Icons.remove,
+                                        size: 16,
+                                      ),
                                     ),
                                   ),
                                   Text(
-                                    "40",
+                                    "${quantities[index]}",
                                     style: Body2.SemiBold14px,
                                   ),
-                                  CircleAvatar(
-                                    backgroundColor: CustColors.black10,
-                                    foregroundColor: CustColors.black100,
-                                    radius: 16,
-                                    child: Icon(
-                                      Icons.add,
-                                      size: 16,
+                                  GestureDetector(
+                                    onTap: () {
+                                      print("plus pressed $index");
+                                      setState(() {
+                                        quantities[index]++;
+                                        print(quantities[index]);
+                                      });
+                                    },
+                                    child: CircleAvatar(
+                                      backgroundColor: CustColors.black10,
+                                      foregroundColor: CustColors.black100,
+                                      radius: 16,
+                                      child: Icon(
+                                        Icons.add,
+                                        size: 16,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -166,6 +211,7 @@ class AddToCartScreen extends StatelessWidget {
           enableDrag: false,
           onClosing: () {},
           builder: (context) {
+            double subtotal = calculateSubtotal();
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Container(
@@ -191,7 +237,7 @@ class AddToCartScreen extends StatelessWidget {
                             style: Label.Medium12px.copyWith(
                                 color: CustColors.black60),
                           ),
-                          Text("data"),
+                          Text("$subtotal"),
                         ],
                       ),
                       Row(
@@ -202,7 +248,7 @@ class AddToCartScreen extends StatelessWidget {
                             style: Label.Medium12px.copyWith(
                                 color: CustColors.black60),
                           ),
-                          Text("data"),
+                          Text("$subtotal"),
                         ],
                       ),
                       Row(
@@ -213,7 +259,7 @@ class AddToCartScreen extends StatelessWidget {
                             style: Label.Medium12px.copyWith(
                                 color: CustColors.black60),
                           ),
-                          Text("data"),
+                          Text("${subtotal + 20}"),
                         ],
                       ),
                       CustTextButton(

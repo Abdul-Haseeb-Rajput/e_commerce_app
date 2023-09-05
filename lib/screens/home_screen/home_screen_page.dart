@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../products_dummy_api.dart';
@@ -8,7 +9,7 @@ import '../categories_screen/product_screen.dart';
 import 'appbar_styling_widget.dart';
 import 'list_view_horizontal.dart';
 
-class HomeScreenPageView extends StatelessWidget {
+class HomeScreenPageView extends StatefulWidget {
   // int index;
   HomeScreenPageView({
     // required this.index,
@@ -16,13 +17,23 @@ class HomeScreenPageView extends StatelessWidget {
   });
 
   @override
+  State<HomeScreenPageView> createState() => _HomeScreenPageViewState();
+}
+
+class _HomeScreenPageViewState extends State<HomeScreenPageView> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: CustColors.lightBlue,
         toolbarHeight: MediaQuery.of(context).size.height * .35,
-        flexibleSpace: AppBarStyling(),
+        flexibleSpace: AppBarStyling(
+          onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => AddToCartScreen()));
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -114,6 +125,10 @@ class HomeScreenPageView extends StatelessWidget {
                               child: GestureDetector(
                                 onTap: () {
                                   print("cart index tapped $index");
+                                  setState(() {
+                                    cartItems.add(products[index]);
+                                  });
+                                  print(cartItems);
                                 },
                                 child: CircleAvatar(
                                   backgroundColor: CustColors.darkBlue,
@@ -135,9 +150,13 @@ class HomeScreenPageView extends StatelessWidget {
                                     "\$ ${products[index]["price"]}",
                                     style: Body2.Medium14px,
                                   ),
-                                  Text(
-                                    "${products[index]["title"]}",
-                                    style: Body2.Medium14px,
+                                  SizedBox(
+                                    width: 150,
+                                    child: Text(
+                                      "${products[index]["title"]}",
+                                      style: Body2.Medium14px,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
                                   Text(
                                     "Unit: ${products[index]["stock"]}",

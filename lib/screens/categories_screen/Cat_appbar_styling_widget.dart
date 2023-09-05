@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/products_dummy_api.dart';
+import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../styles/colors.dart';
@@ -32,10 +34,46 @@ class CatAppBarStyling extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Icon(
-                    Icons.card_travel,
-                    color: CustColors.black1,
-                    size: 25,
+                  Stack(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => AddToCartScreen()));
+                        },
+                        child: Container(
+                          // color: CustColors.black90,
+                          height: 60,
+                          width: 40,
+                          child: const Icon(
+                            Icons.card_travel,
+                            color: CustColors.black1,
+                            size: 25,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 2,
+                        right: 0,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AddToCartScreen()));
+                          },
+                          child: CircleAvatar(
+                            backgroundColor: CustColors.lightYellow,
+                            radius: 12,
+                            child: Text(
+                              "${cartItems.length}",
+                              style: Label.Medium12px.copyWith(
+                                  color: CustColors.black1),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               )
