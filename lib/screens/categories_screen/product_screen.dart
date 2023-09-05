@@ -48,7 +48,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     child: Icon(
                       Icons.arrow_back_ios_rounded,
                       color: CustColors.black100,
-                      // size: 18,
+                      size: 18,
                     ),
                   ),
                 ),
@@ -69,8 +69,16 @@ class _ProductScreenState extends State<ProductScreen> {
                           print("index from previous $itForInd");
                         },
                         child: Container(
-                          child: Image.network(
-                              "${prodsImgs[widget.indexForItem][index]}"),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: CustColors.black45,
+                            // borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(200),
+                            child: Image.network(
+                                "${prodsImgs[widget.indexForItem][index]}"),
+                          ),
                           // backgroundColor: const Color.fromARGB(255, 29, 52, 71),
                           // foregroundImage:
                           //     NetworkImage("${imagesWithoutBrackets[index]}"),
