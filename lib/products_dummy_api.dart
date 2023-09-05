@@ -12,7 +12,6 @@ List products = [
     "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
     "images": [
       "https://i.dummyjson.com/data/products/1/1.jpg",
-      "https://i.dummyjson.com/data/products/1/2.jpg",
       "https://i.dummyjson.com/data/products/1/3.jpg",
       "https://i.dummyjson.com/data/products/1/4.jpg",
       "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
@@ -613,8 +612,8 @@ List products = [
 //
 
 //
-Map<dynamic, dynamic> productCategories = {
-  0: {
+List<Map> productCategories = [
+  {
     "id": 1,
     "title": "iPhone 9",
     "description": "An apple mobile which is nothing like apple",
@@ -634,7 +633,7 @@ Map<dynamic, dynamic> productCategories = {
     ],
     "favotrite": false,
   },
-  1: {
+  {
     "id": 6,
     "title": "MacBook Pro",
     "description":
@@ -654,7 +653,7 @@ Map<dynamic, dynamic> productCategories = {
     ],
     "favotrite": false,
   },
-  2: {
+  {
     "id": 11,
     "title": "perfume Oil",
     "description":
@@ -674,7 +673,7 @@ Map<dynamic, dynamic> productCategories = {
     ],
     "favotrite": false,
   },
-  3: {
+  {
     "id": 16,
     "title": "Hyaluronic Acid Serum",
     "description":
@@ -695,7 +694,7 @@ Map<dynamic, dynamic> productCategories = {
     ],
     "favotrite": false,
   },
-  4: {
+  {
     "id": 21,
     "title": "- Daal Masoor 500 grams",
     "description": "Fine quality Branded Product Keep in a cool and dry place",
@@ -713,29 +712,7 @@ Map<dynamic, dynamic> productCategories = {
     ],
     "favotrite": false,
   },
-  5: {
-    "id": 26,
-    "title": "Plant Hanger For Home",
-    "description":
-        "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
-    "price": 41,
-    "discountPercentage": 17.86,
-    "rating": 4.08,
-    "stock": 131,
-    "brand": "Boho Decor",
-    "category": "home-decoration",
-    "thumbnail": "https://i.dummyjson.com/data/products/26/thumbnail.jpg",
-    "images": [
-      "https://i.dummyjson.com/data/products/26/1.jpg",
-      "https://i.dummyjson.com/data/products/26/2.jpg",
-      "https://i.dummyjson.com/data/products/26/3.jpg",
-      "https://i.dummyjson.com/data/products/26/4.jpg",
-      "https://i.dummyjson.com/data/products/26/5.jpg",
-      "https://i.dummyjson.com/data/products/26/thumbnail.jpg"
-    ],
-    "favotrite": false,
-  },
-};
+];
 
 //
 //
@@ -1161,7 +1138,7 @@ List<Map> skincare = [
 List<Map> groceries = [
   {
     "id": 21,
-    "title": "- Daal Masoor 500 grams",
+    "title": "Daal Masoor 500 grams",
     "description": "Fine quality Branded Product Keep in a cool and dry place",
     "price": 20,
     "discountPercentage": 4.81,
@@ -1375,5 +1352,20 @@ List categories = [
   fragrances,
   skincare,
   groceries,
-  homeDecoration
 ];
+
+  Map images = {
+    0: 
+      [
+        "https://i.dummyjson.com/data/products/1/1.jpg",
+        "https://i.dummyjson.com/data/products/1/3.jpg",
+        "https://i.dummyjson.com/data/products/1/4.jpg",
+        "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+      ],
+    
+    1: {},
+    2: {},
+    3: {},
+    4: {},
+  };
+  // print(images[0][1]);

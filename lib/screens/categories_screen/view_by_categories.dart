@@ -16,6 +16,7 @@ class ViewByCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List itemLeng = categories[indexForCategory];
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -30,6 +31,7 @@ class ViewByCategories extends StatelessWidget {
           ),
         ),
         title: Text(
+          //for showing text title in appbar
           "${categories[indexForCategory][indexForCategory]['category']}",
           style: Heading3.Regular20px.copyWith(color: CustColors.black100),
         ),
@@ -59,7 +61,9 @@ class ViewByCategories extends StatelessWidget {
                 crossAxisCount: 2),
             itemBuilder: (buildContext, index) {
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  print('container index $index');
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     color: CustColors.black10,
