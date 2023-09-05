@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import '../../products_dummy_api.dart';
 import '../onboard_screens/widget/cust_text_botton.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../home_screen/home_screen_page.dart';
 
+// ignore: must_be_immutable
 class ProductScreen extends StatefulWidget {
-  int indexForItem;
+  final int indexForItem;
 
   ProductScreen({super.key, required this.indexForItem});
 
@@ -17,9 +19,14 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
   final controller = PageController();
+
+  // get indexForItem => indexForItem;
   @override
   Widget build(BuildContext context) {
+    int itForInd = widget.indexForItem;
     List imgLen = products[0]['images'];
+    List imgL = abc[widget.indexForItem];
+    List im = abc[widget.indexForItem];
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
@@ -50,18 +57,25 @@ class _ProductScreenState extends State<ProductScreen> {
                   height: 230,
                   width: 230,
                   child: PageView.builder(
-                    itemCount: imgLen.length,
+                    itemCount: imgL.length,
                     controller: controller,
                     itemBuilder: (context, index) {
                       // String imagesWithoutBrackets =
                       //     (products[indexForItem]["images"] as List<String>)
                       //         .join(',');
-                      return Container(
-                        child: Image.network(images[0][index]),
-                        // backgroundColor: const Color.fromARGB(255, 29, 52, 71),
-                        // foregroundImage:
-                        //     NetworkImage("${imagesWithoutBrackets[index]}"),
-                        // radius: MediaQuery.of(context).size.width * .32,
+                      return GestureDetector(
+                        onTap: () {
+                          print("im circle $index");
+                          print("index from previous $itForInd");
+                        },
+                        child: Container(
+                          child: Image.network(
+                              "${abc[widget.indexForItem][index]}"),
+                          // backgroundColor: const Color.fromARGB(255, 29, 52, 71),
+                          // foregroundImage:
+                          //     NetworkImage("${imagesWithoutBrackets[index]}"),
+                          // radius: MediaQuery.of(context).size.width * .32,
+                        ),
                       );
                     },
                   ),
@@ -78,7 +92,7 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
             SmoothPageIndicator(
               controller: controller,
-              count: imgLen.length,
+              count: im.length,
               effect: const WormEffect(
                 dotHeight: 3,
                 dotWidth: 30,
