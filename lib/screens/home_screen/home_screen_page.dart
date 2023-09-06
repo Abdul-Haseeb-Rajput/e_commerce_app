@@ -146,7 +146,7 @@ class _HomeScreenPageViewState extends State<HomeScreenPageView> {
                               right: 20,
                               child: GestureDetector(
                                 onTap: () {
-                                  print("cart index tapped $index");
+                                  print("fovourite index tapped $index");
                                   setState(() {
                                     cartItems.add(products[index]);
                                   });
