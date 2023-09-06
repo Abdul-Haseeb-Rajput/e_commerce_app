@@ -95,8 +95,10 @@ class _HomeScreenPageViewState extends State<HomeScreenPageView> {
                         Navigator.push(
                           context,
                           (MaterialPageRoute(
-                              builder: (context) =>
-                                  ProductScreen(indexForItem: index))),
+                              builder: (context) => ProductScreen(
+                                    indexForItem: index,
+                                    fromScreen: 'homeScreen',
+                                  ))),
                         );
                       },
                       child: Container(
@@ -138,6 +140,27 @@ class _HomeScreenPageViewState extends State<HomeScreenPageView> {
                                 ),
                               ),
                             ),
+                            // favourite button
+                            Positioned(
+                              top: 180,
+                              right: 20,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("cart index tapped $index");
+                                  setState(() {
+                                    cartItems.add(products[index]);
+                                  });
+                                  print(cartItems);
+                                },
+                                child: CircleAvatar(
+                                  // change color of fovourute button
+                                  backgroundColor: CustColors.black45,
+                                  foregroundColor: CustColors.black1,
+                                  radius: 15,
+                                  child: Icon(Icons.favorite_outline_rounded),
+                                ),
+                              ),
+                            ),
                             Positioned(
                               bottom: 20,
                               left: 10,
@@ -151,7 +174,7 @@ class _HomeScreenPageViewState extends State<HomeScreenPageView> {
                                     style: Body2.Medium14px,
                                   ),
                                   SizedBox(
-                                    width: 150,
+                                    width: 100,
                                     child: Text(
                                       "${products[index]["title"]}",
                                       style: Body2.Medium14px,

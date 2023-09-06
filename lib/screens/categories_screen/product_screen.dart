@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
 import 'package:e_commerce_app/styles/colors.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,14 @@ import '../home_screen/home_screen_page.dart';
 // ignore: must_be_immutable
 class ProductScreen extends StatefulWidget {
   final int indexForItem;
+  final int? indexForCatItem;
+  final String fromScreen;
 
-  ProductScreen({super.key, required this.indexForItem});
+  ProductScreen(
+      {super.key,
+      required this.indexForItem,
+      this.indexForCatItem,
+      required this.fromScreen});
 
   @override
   State<ProductScreen> createState() => _ProductScreenState();
@@ -24,9 +31,14 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     int itForInd = widget.indexForItem;
+    int? itforInd2 = widget.indexForCatItem;
+    String fromScreen = widget.fromScreen;
     // List imgLen = products[0]['images'];
     List imgL = prodsImgs[widget.indexForItem];
-    List im = prodsImgs[widget.indexForItem];
+    // List im = prodsImgs[widget.indexForItem];
+    List countCond = fromScreen == "homeScreen"
+        ? prodsImgs[widget.indexForItem]
+        : categories[itForInd][itforInd2]['images'];
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
@@ -57,41 +69,107 @@ class _ProductScreenState extends State<ProductScreen> {
                   height: 230,
                   width: 230,
                   child: PageView.builder(
-                    itemCount: imgL.length,
+                    itemCount: countCond.length,
                     controller: controller,
                     itemBuilder: (context, index) {
+                      if (fromScreen == "homeScreen") {
+                        return GestureDetector(
+                          onTap: () {
+                            print("im circle $index");
+                            print("index from previous $itForInd");
+                            print("index from catInd $itforInd2");
+                            print("ind count from cat ");
+                            // print("${categories[itForInd][itforInd2]["title"]}");
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: CustColors.black45,
+                              // borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: CircleAvatar(
+                              backgroundColor: Color.fromARGB(0, 29, 52, 71),
+                              foregroundImage: NetworkImage(
+                                  "${prodsImgs[widget.indexForItem][index]}",
+                                  scale: 0.1),
+                            ),
+                            // foregroundImage:
+                            //     NetworkImage("${imagesWithoutBrackets[index]}"),
+                            // radius: MediaQuery.of(context).size.width * .32,
+                          ),
+                        );
+                      } else {
+                        return GestureDetector(
+                          onTap: () {
+                            print("im circle $index");
+                            print("index from previous $itForInd");
+                            print("index from catInd $itforInd2");
+                            // print("${categories[itForInd][itforInd2]["title"]}");
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: CustColors.black45,
+                              // borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: CircleAvatar(
+                              backgroundColor: Color.fromARGB(0, 29, 52, 71),
+                              foregroundImage: NetworkImage(
+                                  "${categories[itForInd][itforInd2]['images'][index]}",
+                                  scale: 0.1),
+                            ),
+                            // foregroundImage:
+                            //     NetworkImage("${imagesWithoutBrackets[index]}"),
+                            // radius: MediaQuery.of(context).size.width * .32,
+                          ),
+                        );
+                      }
                       // String imagesWithoutBrackets =
                       //     (products[indexForItem]["images"] as List<String>)
                       //         .join(',');
-                      return GestureDetector(
-                        onTap: () {
-                          print("im circle $index");
-                          print("index from previous $itForInd");
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: CustColors.black45,
-                            // borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: CircleAvatar(
-                            backgroundColor: Color.fromARGB(0, 29, 52, 71),
-                            foregroundImage: NetworkImage(
-                                "${prodsImgs[widget.indexForItem][index]}",
-                                scale: 0.1),
-                          ),
-                          // foregroundImage:
-                          //     NetworkImage("${imagesWithoutBrackets[index]}"),
-                          // radius: MediaQuery.of(context).size.width * .32,
-                        ),
-                      );
                     },
                   ),
                 ),
-                Icon(
-                  Icons.card_travel,
-                  color: CustColors.black100,
-                  // size: 18,
+                SizedBox(
+                  // color: CustColors.black60,
+                  height: 50,
+                  width: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddToCartScreen()));
+                    },
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          bottom: 12,
+                          left: 12,
+                          child: Icon(
+                            Icons.card_travel,
+                            color: CustColors.black100,
+                            // size: 18,
+                          ),
+                        ),
+                        if (cartItems.isEmpty) Container(),
+                        if (cartItems.isNotEmpty)
+                          Positioned(
+                            top: 4,
+                            right: 6,
+                            child: CircleAvatar(
+                              backgroundColor: CustColors.lightYellow,
+                              radius: 12,
+                              child: Text(
+                                "${cartItems.length}",
+                                style: Label.Medium12px.copyWith(
+                                    color: CustColors.black1),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -100,7 +178,7 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
             SmoothPageIndicator(
               controller: controller,
-              count: im.length,
+              count: countCond.length,
               effect: const WormEffect(
                 dotHeight: 3,
                 dotWidth: 30,
@@ -112,17 +190,29 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
             Row(
               children: [
-                Container(
-                  // color: CustColors.lightYellow,
-                  width: MediaQuery.of(context).size.width * .9,
-                  child: Text(
-                    "${products[widget.indexForItem]["title"]}",
-                    style: Heading4.Bold18px,
-                    textAlign: TextAlign.left,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
+                if (fromScreen == "homeScreen")
+                  Container(
+                    width: MediaQuery.of(context).size.width * .9,
+                    child: Text(
+                      "${products[widget.indexForItem]["title"]}",
+                      style: Heading4.Bold18px,
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),
                   ),
-                ),
+                if (fromScreen == "categoryScreen")
+                  Container(
+                    // color: CustColors.lightYellow,
+                    width: MediaQuery.of(context).size.width * .9,
+                    child: Text(
+                      "${categories[itForInd][itforInd2]["title"]}",
+                      style: Heading4.Bold18px,
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),
+                  ),
               ],
             ),
             SizedBox(
@@ -136,29 +226,55 @@ class _ProductScreenState extends State<ProductScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "\$${products[widget.indexForItem]["price"]}",
-                      style: Body1.SemiBold16px.copyWith(
-                          color: CustColors.lightBlue),
-                    ),
+                    if (fromScreen == "homeScreen")
+                      Text(
+                        "\$${products[widget.indexForItem]["price"]}",
+                        style: Body1.SemiBold16px.copyWith(
+                            color: CustColors.lightBlue),
+                      ),
+                    if (fromScreen == "categoryScreen")
+                      Text(
+                        "\$${categories[itForInd][itforInd2]["price"]}",
+                        style: Heading4.Bold18px,
+                        textAlign: TextAlign.left,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      width: 100,
-                      height: 25,
-                      decoration: BoxDecoration(
-                        color: CustColors.lightBlue,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "${products[widget.indexForItem]["discountPercentage"]}% off",
-                          style: Label.Medium12px.copyWith(
-                              color: CustColors.black1),
+                    if (fromScreen == "homeScreen")
+                      Container(
+                        width: 100,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: CustColors.lightBlue,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "${products[widget.indexForItem]["discountPercentage"]}% off",
+                            style: Label.Medium12px.copyWith(
+                                color: CustColors.black1),
+                          ),
                         ),
                       ),
-                    ),
+                    if (fromScreen == "categoryScreen")
+                      Container(
+                        width: 100,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: CustColors.lightBlue,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "${categories[itForInd][itforInd2]["discountPercentage"]}% off",
+                            style: Label.Medium12px.copyWith(
+                                color: CustColors.black1),
+                          ),
+                        ),
+                      ),
                   ],
                 ),
                 Row(
@@ -232,7 +348,12 @@ class _ProductScreenState extends State<ProductScreen> {
                       ),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      cartItems.add(products[widget.indexForItem]);
+                      print(cartItems);
+                    });
+                  },
                 ),
                 //
                 // with bg color
@@ -283,11 +404,18 @@ class _ProductScreenState extends State<ProductScreen> {
                         SizedBox(
                           height: 8,
                         ),
-                        Text(
-                          "${products[widget.indexForItem]["description"]}",
-                          textAlign: TextAlign.justify,
-                          style: Body2.Medium14px.copyWith(),
-                        ),
+                        if (fromScreen == "homeScreen")
+                          Text(
+                            "${products[widget.indexForItem]["description"]}",
+                            textAlign: TextAlign.justify,
+                            style: Body2.Medium14px.copyWith(),
+                          ),
+                        if (fromScreen == "categoryScreen")
+                          Text(
+                            "${categories[itForInd][itforInd2]["description"]}",
+                            textAlign: TextAlign.justify,
+                            style: Body2.Medium14px.copyWith(),
+                          ),
                         SizedBox(
                           height: 20,
                         ),
@@ -310,10 +438,16 @@ class _ProductScreenState extends State<ProductScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Text(
-                                      "${products[widget.indexForItem]["description"]}",
-                                      textAlign: TextAlign.left,
-                                    ),
+                                    if (fromScreen == "homeScreen")
+                                      Text(
+                                        "${products[widget.indexForItem]["description"]}",
+                                        textAlign: TextAlign.left,
+                                      ),
+                                    if (fromScreen == "categoryScreen")
+                                      Text(
+                                        "${categories[itForInd][itforInd2]["description"]}",
+                                        textAlign: TextAlign.left,
+                                      ),
                                   ],
                                 )
                               ],

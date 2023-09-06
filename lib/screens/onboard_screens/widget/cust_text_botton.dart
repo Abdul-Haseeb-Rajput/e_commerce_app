@@ -16,7 +16,7 @@ class CustTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: buttonStyle,
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         title,
         style: textStyle,

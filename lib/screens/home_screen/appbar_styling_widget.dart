@@ -35,25 +35,27 @@ class AppBarStyling extends StatelessWidget {
                         // color: CustColors.black90,
                         height: 60,
                         width: 40,
-                        child: Icon(
+                        child: const Icon(
                           Icons.card_travel,
                           color: CustColors.black1,
                           size: 25,
                         ),
                       ),
-                      Positioned(
-                        top: 2,
-                        right: 0,
-                        child: CircleAvatar(
-                          backgroundColor: CustColors.lightYellow,
-                          radius: 12,
-                          child: Text(
-                            "${cartItems.length}",
-                            style: Label.Medium12px.copyWith(
-                                color: CustColors.black1),
+                      if (cartItems.isEmpty) Container(),
+                      if (cartItems.isNotEmpty)
+                        Positioned(
+                          top: 2,
+                          right: 0,
+                          child: CircleAvatar(
+                            backgroundColor: CustColors.lightYellow,
+                            radius: 12,
+                            child: Text(
+                              "${cartItems.length}",
+                              style: Label.Medium12px.copyWith(
+                                  color: CustColors.black1),
+                            ),
                           ),
                         ),
-                      ),
                     ],
                   ),
                 ),

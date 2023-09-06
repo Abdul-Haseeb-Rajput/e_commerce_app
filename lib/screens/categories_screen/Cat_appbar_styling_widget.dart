@@ -26,20 +26,21 @@ class CatAppBarStyling extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.search,
                     color: CustColors.black1,
                     size: 25,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Stack(
                     children: [
                       GestureDetector(
                         onTap: () {
+                          
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => AddToCartScreen()));
+                              builder: (context) => const AddToCartScreen()));
                         },
                         child: Container(
                           // color: CustColors.black90,
@@ -52,6 +53,8 @@ class CatAppBarStyling extends StatelessWidget {
                           ),
                         ),
                       ),
+                      if(cartItems.isEmpty) SizedBox(),
+                      if(cartItems.isNotEmpty)
                       Positioned(
                         top: 2,
                         right: 0,
@@ -60,7 +63,8 @@ class CatAppBarStyling extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => AddToCartScreen()));
+                                    builder: (context) =>
+                                        const AddToCartScreen()));
                           },
                           child: CircleAvatar(
                             backgroundColor: CustColors.lightYellow,
@@ -79,7 +83,7 @@ class CatAppBarStyling extends StatelessWidget {
               )
             ],
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(

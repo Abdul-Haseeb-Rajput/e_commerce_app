@@ -1,14 +1,14 @@
-import 'package:e_commerce_app/products_dummy_api.dart';
+// import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:e_commerce_app/screens/favorite_screen/favourite_screen.dart';
 import 'package:e_commerce_app/styles/colors.dart';
-import 'package:e_commerce_app/styles/text_styles.dart';
+// import 'package:e_commerce_app/styles/text_styles.dart';
 import 'package:flutter/material.dart';
 
 import '../categories_screen/categories_screen.dart';
 import '../more_screen/more_screen.dart';
-import 'appbar_styling_widget.dart';
+// import 'appbar_styling_widget.dart';
 import 'home_screen_page.dart';
-import 'list_view_horizontal.dart';
+// import 'list_view_horizontal.dart';
 
 // import '../../products.dart';
 
@@ -48,9 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         children: <Widget>[
           HomeScreenPageView(),
-          CategoriesScreen(),
-          FavouriteScreen(),
-          MoreScreen(),
+          const CategoriesScreen(),
+          const FavouriteScreen(),
+          const MoreScreen(),
         ],
       ),
 
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedItemColor: CustColors.darkYellow,
         currentIndex: _selectedIndex,
         unselectedItemColor: CustColors.black60,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.category), label: "Category"),

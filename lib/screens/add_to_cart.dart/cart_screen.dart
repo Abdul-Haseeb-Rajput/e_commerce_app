@@ -51,7 +51,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
                       backgroundColor: CustColors.black10,
                       child: Icon(
                         Icons.arrow_back_ios_rounded,
@@ -65,7 +65,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                   top: 26,
                   left: 64,
                   child: Text(
-                    "Shopping Cart",
+                    "Shopping Cart (${cartItems.length})",
                     style: Body1.Medium16px.copyWith(
                       color: CustColors.black90,
                     ),
@@ -79,7 +79,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                     width: 120,
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   right: 40,
                   bottom: 40,
                   child: Text(
@@ -90,7 +90,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                         color: CustColors.black1),
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   right: 40,
                   top: 50,
                   child: Text(
@@ -131,7 +131,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                     children: [
                       ListView.builder(
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: cartItems.length,
                         itemBuilder: (context, index) {
                           return ListTile(
@@ -161,7 +161,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                                         print(quantities[index]);
                                       });
                                     },
-                                    child: CircleAvatar(
+                                    child: const CircleAvatar(
                                       backgroundColor: CustColors.black10,
                                       foregroundColor: CustColors.black100,
                                       radius: 16,
@@ -183,7 +183,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                                         print(quantities[index]);
                                       });
                                     },
-                                    child: CircleAvatar(
+                                    child: const CircleAvatar(
                                       backgroundColor: CustColors.black10,
                                       foregroundColor: CustColors.black100,
                                       radius: 16,
@@ -216,7 +216,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Container(
                 height: 195,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: CustColors.black10,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -270,9 +270,9 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                             minimumSize: MaterialStatePropertyAll(
                               Size(MediaQuery.of(context).size.width, 60),
                             ),
-                            backgroundColor:
-                                MaterialStatePropertyAll(CustColors.lightBlue),
-                            side: MaterialStatePropertyAll(
+                            backgroundColor: const MaterialStatePropertyAll(
+                                CustColors.lightBlue),
+                            side: const MaterialStatePropertyAll(
                               BorderSide(
                                 width: 2,
                                 color: CustColors.lightBlue,

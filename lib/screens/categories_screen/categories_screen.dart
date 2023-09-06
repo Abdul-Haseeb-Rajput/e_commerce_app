@@ -21,7 +21,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         elevation: 0,
         backgroundColor: CustColors.lightBlue,
         toolbarHeight: MediaQuery.of(context).size.height * .35,
-        flexibleSpace: CatAppBarStyling(),
+        flexibleSpace: const CatAppBarStyling(),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -30,9 +30,9 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             children: [
               GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: productCategories.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisExtent: 200,
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
@@ -40,6 +40,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 itemBuilder: (BuildContext, index) {
                   return GestureDetector(
                     onTap: () {
+                      setState(() {});
                       print(index);
                       Navigator.push(
                           context,

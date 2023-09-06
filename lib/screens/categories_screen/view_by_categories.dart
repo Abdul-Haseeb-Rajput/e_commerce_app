@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
+import 'package:e_commerce_app/screens/categories_screen/product_screen.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_new,
             color: CustColors.black100,
           ),
@@ -44,7 +45,7 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
         ),
         actions: [
           Container(
-            margin: EdgeInsets.only(right: 10, top: 8),
+            margin: const EdgeInsets.only(right: 10, top: 8),
             height: double.infinity,
             width: 100,
             // color: CustColors.black60,
@@ -55,7 +56,7 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
                   children: [
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.search),
+                      icon: const Icon(Icons.search),
                       color: CustColors.black100,
                     ),
                     GestureDetector(
@@ -63,36 +64,39 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AddToCartScreen()));
+                                builder: (context) => const AddToCartScreen()));
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.card_travel,
                         color: CustColors.black100,
                       ),
                     ),
                   ],
                 ),
-                Positioned(
-                  top: 2,
-                  right: 0,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AddToCartScreen()));
-                    },
-                    child: CircleAvatar(
-                      backgroundColor: CustColors.lightYellow,
-                      radius: 12,
-                      child: Text(
-                        "${cartItems.length}",
-                        style:
-                            Label.Medium12px.copyWith(color: CustColors.black1),
+                if (cartItems.isEmpty) Container(),
+                if (cartItems.isNotEmpty)
+                  Positioned(
+                    top: 2,
+                    right: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {});
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AddToCartScreen()));
+                      },
+                      child: CircleAvatar(
+                        backgroundColor: CustColors.lightYellow,
+                        radius: 12,
+                        child: Text(
+                          "${cartItems.length}",
+                          style: Label.Medium12px.copyWith(
+                              color: CustColors.black1),
+                        ),
                       ),
                     ),
                   ),
-                ),
               ],
             ),
           ),
@@ -104,7 +108,7 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
             // shrinkWrap: true,
             // physics: NeverScrollableScrollPhysics(),
             itemCount: itemLeng.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisExtent: 250,
                 mainAxisSpacing: 8,
                 crossAxisSpacing: 8,
@@ -113,6 +117,14 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
               return GestureDetector(
                 onTap: () {
                   print('container index $index');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => ProductScreen(
+                                indexForItem: widget.indexForCategory,
+                                indexForCatItem: index,
+                                fromScreen: 'categoryScreen',
+                              ))));
                   // print(cartItems.length);
                 },
                 child: Container(
@@ -125,7 +137,8 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(16)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(16)),
                           child: Image.network(
                             "${categories[widget.indexForCategory][index]['thumbnail']}",
                             height: 150,
@@ -140,11 +153,13 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
                         child: GestureDetector(
                           onTap: () {
                             print('$index tapped');
-                            cartItems.add(
-                                categories[widget.indexForCategory][index]);
                             print(cartItems);
+                            setState(() {
+                              cartItems.add(
+                                  categories[widget.indexForCategory][index]);
+                            });
                           },
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             backgroundColor: CustColors.darkBlue,
                             foregroundColor: CustColors.black1,
                             radius: 15,
