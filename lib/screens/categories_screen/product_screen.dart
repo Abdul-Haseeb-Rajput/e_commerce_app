@@ -2,6 +2,7 @@ import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
 import 'package:e_commerce_app/styles/colors.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../products_dummy_api.dart';
 import '../onboard_screens/widget/cust_text_botton.dart';
@@ -147,9 +148,8 @@ class _ProductScreenState extends State<ProductScreen> {
                           bottom: 12,
                           left: 12,
                           child: Icon(
-                            Icons.card_travel,
-                            color: CustColors.black100,
-                            // size: 18,
+                            IconlyLight.bag,
+                            // color: CustColors.black1,
                           ),
                         ),
                         if (cartItems.isEmpty) Container(),

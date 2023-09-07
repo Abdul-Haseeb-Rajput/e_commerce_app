@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../styles/colors.dart';
 import '../../styles/text_styles.dart';
@@ -27,9 +28,8 @@ class CatAppBarStyling extends StatelessWidget {
               Row(
                 children: [
                   const Icon(
-                    Icons.search,
+                    IconlyLight.search,
                     color: CustColors.black1,
-                    size: 25,
                   ),
                   const SizedBox(
                     width: 10,
@@ -38,7 +38,6 @@ class CatAppBarStyling extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => const AddToCartScreen()));
                         },
@@ -47,36 +46,35 @@ class CatAppBarStyling extends StatelessWidget {
                           height: 60,
                           width: 40,
                           child: const Icon(
-                            Icons.card_travel,
+                            IconlyLight.bag,
                             color: CustColors.black1,
-                            size: 25,
                           ),
                         ),
                       ),
-                      if(cartItems.isEmpty) SizedBox(),
-                      if(cartItems.isNotEmpty)
-                      Positioned(
-                        top: 2,
-                        right: 0,
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const AddToCartScreen()));
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: CustColors.lightYellow,
-                            radius: 12,
-                            child: Text(
-                              "${cartItems.length}",
-                              style: Label.Medium12px.copyWith(
-                                  color: CustColors.black1),
+                      if (cartItems.isEmpty) SizedBox(),
+                      if (cartItems.isNotEmpty)
+                        Positioned(
+                          top: 2,
+                          right: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const AddToCartScreen()));
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: CustColors.lightYellow,
+                              radius: 12,
+                              child: Text(
+                                "${cartItems.length}",
+                                style: Label.Medium12px.copyWith(
+                                    color: CustColors.black1),
+                              ),
                             ),
                           ),
                         ),
-                      ),
                     ],
                   ),
                 ],

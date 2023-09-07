@@ -13,4 +13,5 @@ class CustColors {
   static const Color black20 = Color(0xffC5CDD2);
   static const Color black10 = Color(0xffE7ECF0);
   static const Color black1 = Color(0xffF8F9FB);
+  static const Color bottomNavBut = Color(0xff1E222B);
 }

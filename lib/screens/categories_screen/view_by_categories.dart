@@ -3,6 +3,7 @@ import 'package:e_commerce_app/screens/categories_screen/product_screen.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../products_dummy_api.dart';
 import '../../styles/colors.dart';
@@ -56,7 +57,10 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
                   children: [
                     IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.search),
+                      icon: const Icon(
+                        IconlyLight.search,
+                        // color: CustColors.black1,
+                      ),
                       color: CustColors.black100,
                     ),
                     GestureDetector(
@@ -67,7 +71,7 @@ class _ViewByCategoriesState extends State<ViewByCategories> {
                                 builder: (context) => const AddToCartScreen()));
                       },
                       child: const Icon(
-                        Icons.card_travel,
+                        IconlyLight.bag,
                         color: CustColors.black100,
                       ),
                     ),

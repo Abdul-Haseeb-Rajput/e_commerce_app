@@ -135,7 +135,7 @@ class _OnbordingState extends State<Onbording> {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

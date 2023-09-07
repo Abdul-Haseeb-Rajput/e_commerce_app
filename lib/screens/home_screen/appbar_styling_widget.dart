@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../styles/colors.dart';
 import '../../styles/text_styles.dart';
@@ -35,10 +36,9 @@ class AppBarStyling extends StatelessWidget {
                         // color: CustColors.black90,
                         height: 60,
                         width: 40,
-                        child: const Icon(
-                          Icons.card_travel,
+                        child: Icon(
+                          IconlyLight.bag,
                           color: CustColors.black1,
-                          size: 25,
                         ),
                       ),
                       if (cartItems.isEmpty) Container(),
@@ -65,8 +65,8 @@ class AppBarStyling extends StatelessWidget {
           TextField(
             decoration: InputDecoration(
                 prefixIcon: const Icon(
-                  Icons.search,
-                  color: CustColors.black20,
+                  IconlyLight.search,
+                  color: CustColors.black1,
                 ),
                 hintText: "Search Products or store",
                 hintStyle: const TextStyle(color: CustColors.black45),

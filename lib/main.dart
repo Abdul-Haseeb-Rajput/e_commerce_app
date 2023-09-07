@@ -19,8 +19,9 @@ class ECommerceApp extends StatefulWidget {
 class _ECommerceAppState extends State<ECommerceApp> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: MaterialApp(
+        theme: ThemeData(primaryColor: Color.fromARGB(255, 16, 204, 211)),
         debugShowCheckedModeBanner: false,
         home: Onbording(),
       ),
