@@ -3,7 +3,7 @@ import 'package:e_commerce_app/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../categories_screen/categories_screen.dart';
-import '../more_screen/more_screen.dart';
+import '../orders_screen/lib/screens/orders_screen/more_screen.dart.dart';
 import 'home_screen_page.dart';
 
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -67,29 +67,28 @@ class _HomeScreenState extends State<HomeScreen> {
           TabItem(
             title: "Home",
             icon: Icon(
-              IconlyBold.home,
+              IconlyLight.home,
               color: CustColors.bottomNavBut,
             ),
           ),
           TabItem(
             title: "Categories",
-            // activeIcon: IconlyBold.category,
             icon: Icon(
-              IconlyBold.category,
+              IconlyLight.category,
               color: CustColors.bottomNavBut,
             ),
           ),
           TabItem(
             title: "Favourites",
             icon: Icon(
-              IconlyBold.heart,
+              IconlyLight.heart,
               color: CustColors.bottomNavBut,
             ),
           ),
           TabItem(
             title: "more",
             icon: Icon(
-              Icons.more_vert_rounded,
+              Icons.local_shipping_outlined,
               color: CustColors.bottomNavBut,
             ),
           ),

@@ -16,7 +16,7 @@ List products = [
       "https://i.dummyjson.com/data/products/1/4.jpg",
       "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 2,
@@ -36,7 +36,7 @@ List products = [
       "https://i.dummyjson.com/data/products/2/3.jpg",
       "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 3,
@@ -53,7 +53,7 @@ List products = [
     "images": [
       "https://i.dummyjson.com/data/products/3/1.jpg",
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 4,
@@ -73,7 +73,7 @@ List products = [
       "https://i.dummyjson.com/data/products/4/4.jpg",
       "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 5,
@@ -92,7 +92,7 @@ List products = [
       "https://i.dummyjson.com/data/products/5/2.jpg",
       "https://i.dummyjson.com/data/products/5/3.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 6,
@@ -112,7 +112,7 @@ List products = [
       "https://i.dummyjson.com/data/products/6/3.png",
       "https://i.dummyjson.com/data/products/6/4.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 7,
@@ -132,7 +132,7 @@ List products = [
       "https://i.dummyjson.com/data/products/7/3.jpg",
       "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 8,
@@ -153,7 +153,7 @@ List products = [
       "https://i.dummyjson.com/data/products/8/4.jpg",
       "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 9,
@@ -174,7 +174,7 @@ List products = [
       "https://i.dummyjson.com/data/products/9/4.jpg",
       "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 10,
@@ -194,7 +194,7 @@ List products = [
       "https://i.dummyjson.com/data/products/10/3.jpg",
       "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 11,
@@ -214,7 +214,7 @@ List products = [
       "https://i.dummyjson.com/data/products/11/3.jpg",
       "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 12,
@@ -234,7 +234,7 @@ List products = [
       "https://i.dummyjson.com/data/products/12/4.jpg",
       "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 13,
@@ -255,7 +255,7 @@ List products = [
       "https://i.dummyjson.com/data/products/13/4.jpg",
       "https://i.dummyjson.com/data/products/13/thumbnail.webp"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 14,
@@ -275,7 +275,7 @@ List products = [
       "https://i.dummyjson.com/data/products/14/3.jpg",
       "https://i.dummyjson.com/data/products/14/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 15,
@@ -296,7 +296,7 @@ List products = [
       "https://i.dummyjson.com/data/products/15/4.jpg",
       "https://i.dummyjson.com/data/products/15/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 16,
@@ -317,7 +317,7 @@ List products = [
       "https://i.dummyjson.com/data/products/16/4.jpg",
       "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 17,
@@ -337,7 +337,7 @@ List products = [
       "https://i.dummyjson.com/data/products/17/3.jpg",
       "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 18,
@@ -358,7 +358,7 @@ List products = [
       "https://i.dummyjson.com/data/products/18/4.jpg",
       "https://i.dummyjson.com/data/products/18/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 19,
@@ -378,7 +378,7 @@ List products = [
       "https://i.dummyjson.com/data/products/19/3.png",
       "https://i.dummyjson.com/data/products/19/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 20,
@@ -399,7 +399,7 @@ List products = [
       "https://i.dummyjson.com/data/products/20/4.jpg",
       "https://i.dummyjson.com/data/products/20/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 21,
@@ -417,7 +417,7 @@ List products = [
       "https://i.dummyjson.com/data/products/21/2.jpg",
       "https://i.dummyjson.com/data/products/21/3.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 22,
@@ -435,7 +435,7 @@ List products = [
       "https://i.dummyjson.com/data/products/22/2.jpg",
       "https://i.dummyjson.com/data/products/22/3.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 23,
@@ -456,7 +456,7 @@ List products = [
       "https://i.dummyjson.com/data/products/23/4.jpg",
       "https://i.dummyjson.com/data/products/23/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 24,
@@ -477,7 +477,7 @@ List products = [
       "https://i.dummyjson.com/data/products/24/4.jpg",
       "https://i.dummyjson.com/data/products/24/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 25,
@@ -498,7 +498,7 @@ List products = [
       "https://i.dummyjson.com/data/products/25/4.jpg",
       "https://i.dummyjson.com/data/products/25/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 26,
@@ -520,7 +520,7 @@ List products = [
       "https://i.dummyjson.com/data/products/26/5.jpg",
       "https://i.dummyjson.com/data/products/26/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 27,
@@ -541,7 +541,7 @@ List products = [
       "https://i.dummyjson.com/data/products/27/4.jpg",
       "https://i.dummyjson.com/data/products/27/thumbnail.webp"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 28,
@@ -562,7 +562,7 @@ List products = [
       "https://i.dummyjson.com/data/products/28/4.jpg",
       "https://i.dummyjson.com/data/products/28/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 29,
@@ -583,7 +583,7 @@ List products = [
       "https://i.dummyjson.com/data/products/29/4.webp",
       "https://i.dummyjson.com/data/products/29/thumbnail.webp"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 30,
@@ -603,7 +603,7 @@ List products = [
       "https://i.dummyjson.com/data/products/30/3.jpg",
       "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   }
 ];
 
@@ -633,7 +633,7 @@ List<Map> productCategories = [
       "https://i.dummyjson.com/data/products/1/4.jpg",
       "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 6,
@@ -653,7 +653,7 @@ List<Map> productCategories = [
       "https://i.dummyjson.com/data/products/6/3.png",
       "https://i.dummyjson.com/data/products/6/4.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 11,
@@ -673,7 +673,7 @@ List<Map> productCategories = [
       "https://i.dummyjson.com/data/products/11/3.jpg",
       "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 16,
@@ -694,7 +694,7 @@ List<Map> productCategories = [
       "https://i.dummyjson.com/data/products/16/4.jpg",
       "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 21,
@@ -712,7 +712,7 @@ List<Map> productCategories = [
       "https://i.dummyjson.com/data/products/21/2.jpg",
       "https://i.dummyjson.com/data/products/21/3.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
 ];
 
@@ -737,7 +737,7 @@ List<Map> smartPhones = [
       "https://i.dummyjson.com/data/products/1/4.jpg",
       "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 2,
@@ -757,7 +757,7 @@ List<Map> smartPhones = [
       "https://i.dummyjson.com/data/products/2/3.jpg",
       "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 3,
@@ -772,7 +772,7 @@ List<Map> smartPhones = [
     "category": "smartphones",
     "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
     "images": ["https://i.dummyjson.com/data/products/3/1.jpg"],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 4,
@@ -792,7 +792,7 @@ List<Map> smartPhones = [
       "https://i.dummyjson.com/data/products/4/4.jpg",
       "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 5,
@@ -811,7 +811,7 @@ List<Map> smartPhones = [
       "https://i.dummyjson.com/data/products/5/2.jpg",
       "https://i.dummyjson.com/data/products/5/3.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
 ];
 
@@ -836,7 +836,7 @@ List<Map> laptops = [
       "https://i.dummyjson.com/data/products/6/3.png",
       "https://i.dummyjson.com/data/products/6/4.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 7,
@@ -856,7 +856,7 @@ List<Map> laptops = [
       "https://i.dummyjson.com/data/products/7/3.jpg",
       "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 8,
@@ -877,7 +877,7 @@ List<Map> laptops = [
       "https://i.dummyjson.com/data/products/8/4.jpg",
       "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 9,
@@ -898,7 +898,7 @@ List<Map> laptops = [
       "https://i.dummyjson.com/data/products/9/4.jpg",
       "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 10,
@@ -918,7 +918,7 @@ List<Map> laptops = [
       "https://i.dummyjson.com/data/products/10/3.jpg",
       "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
 ];
 //
@@ -942,7 +942,7 @@ List<Map> fragrances = [
       "https://i.dummyjson.com/data/products/11/3.jpg",
       "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 12,
@@ -962,7 +962,7 @@ List<Map> fragrances = [
       "https://i.dummyjson.com/data/products/12/4.jpg",
       "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 13,
@@ -983,7 +983,7 @@ List<Map> fragrances = [
       "https://i.dummyjson.com/data/products/13/4.jpg",
       "https://i.dummyjson.com/data/products/13/thumbnail.webp"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 14,
@@ -1003,7 +1003,7 @@ List<Map> fragrances = [
       "https://i.dummyjson.com/data/products/14/3.jpg",
       "https://i.dummyjson.com/data/products/14/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 15,
@@ -1024,7 +1024,7 @@ List<Map> fragrances = [
       "https://i.dummyjson.com/data/products/15/4.jpg",
       "https://i.dummyjson.com/data/products/15/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
 ];
 //
@@ -1049,7 +1049,7 @@ List<Map> skincare = [
       "https://i.dummyjson.com/data/products/16/4.jpg",
       "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 17,
@@ -1069,7 +1069,7 @@ List<Map> skincare = [
       "https://i.dummyjson.com/data/products/17/3.jpg",
       "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 18,
@@ -1090,7 +1090,7 @@ List<Map> skincare = [
       "https://i.dummyjson.com/data/products/18/4.jpg",
       "https://i.dummyjson.com/data/products/18/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 19,
@@ -1110,7 +1110,7 @@ List<Map> skincare = [
       "https://i.dummyjson.com/data/products/19/3.png",
       "https://i.dummyjson.com/data/products/19/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 20,
@@ -1131,7 +1131,7 @@ List<Map> skincare = [
       "https://i.dummyjson.com/data/products/20/4.jpg",
       "https://i.dummyjson.com/data/products/20/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
 ];
 //
@@ -1154,7 +1154,7 @@ List<Map> groceries = [
       "https://i.dummyjson.com/data/products/21/2.jpg",
       "https://i.dummyjson.com/data/products/21/3.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 22,
@@ -1172,7 +1172,7 @@ List<Map> groceries = [
       "https://i.dummyjson.com/data/products/22/2.jpg",
       "https://i.dummyjson.com/data/products/22/3.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 23,
@@ -1193,7 +1193,7 @@ List<Map> groceries = [
       "https://i.dummyjson.com/data/products/23/4.jpg",
       "https://i.dummyjson.com/data/products/23/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 24,
@@ -1214,7 +1214,7 @@ List<Map> groceries = [
       "https://i.dummyjson.com/data/products/24/4.jpg",
       "https://i.dummyjson.com/data/products/24/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 25,
@@ -1235,7 +1235,7 @@ List<Map> groceries = [
       "https://i.dummyjson.com/data/products/25/4.jpg",
       "https://i.dummyjson.com/data/products/25/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
 ];
 //
@@ -1261,7 +1261,7 @@ List<Map> homeDecoration = [
       "https://i.dummyjson.com/data/products/26/5.jpg",
       "https://i.dummyjson.com/data/products/26/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 27,
@@ -1282,7 +1282,7 @@ List<Map> homeDecoration = [
       "https://i.dummyjson.com/data/products/27/4.jpg",
       "https://i.dummyjson.com/data/products/27/thumbnail.webp"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 28,
@@ -1303,7 +1303,7 @@ List<Map> homeDecoration = [
       "https://i.dummyjson.com/data/products/28/4.jpg",
       "https://i.dummyjson.com/data/products/28/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 29,
@@ -1324,7 +1324,7 @@ List<Map> homeDecoration = [
       "https://i.dummyjson.com/data/products/29/4.webp",
       "https://i.dummyjson.com/data/products/29/thumbnail.webp"
     ],
-    "favotrite": false,
+    "favourite": false,
   },
   {
     "id": 30,
@@ -1344,7 +1344,7 @@ List<Map> homeDecoration = [
       "https://i.dummyjson.com/data/products/30/3.jpg",
       "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
     ],
-    "favotrite": false,
+    "favourite": false,
   }
 ];
 
@@ -1550,5 +1550,12 @@ List prodsImgs = [
   ],
 ];
 // print(images[0][1]);
-
+// items to add in dart
 List cartItems = [];
+
+// for subtotal price
+List subtotalPrice = [];
+
+List favouriteList = [];
+
+bool isFavourite = false;

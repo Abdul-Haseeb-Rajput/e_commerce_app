@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/products_dummy_api.dart';
+import 'package:e_commerce_app/screens/checkout_screen/checkout_screen.dart';
 import 'package:e_commerce_app/screens/home_screen/appbar_styling_widget.dart';
 import 'package:e_commerce_app/screens/onboard_screens/widget/cust_text_botton.dart';
 import 'package:e_commerce_app/styles/colors.dart';
@@ -16,11 +17,13 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
   // int quantity = 1;
 
   List<int> quantities = List.filled(cartItems.length, 1);
+
   double calculateSubtotal() {
     double subtotal = 0.0;
     for (int i = 0; i < cartItems.length; i++) {
       subtotal += quantities[i] * cartItems[i]['price'];
     }
+    subtotalPrice.add(subtotal);
     return subtotal;
   }
 
@@ -224,43 +227,58 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 24, vertical: 16.0),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Subtotal",
-                            style: Label.Medium12px.copyWith(
-                                color: CustColors.black60),
-                          ),
-                          Text("$subtotal"),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 18,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Subtotal",
+                              style: Label.Medium12px.copyWith(
+                                  color: CustColors.black60),
+                            ),
+                            Text("\$$subtotal"),
+                          ],
+                        ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Total",
-                            style: Label.Medium12px.copyWith(
-                                color: CustColors.black60),
-                          ),
-                          Text("$subtotal"),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 18,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Delivery charges",
+                              style: Label.Medium12px.copyWith(
+                                  color: CustColors.black60),
+                            ),
+                            Text("\$20"),
+                          ],
+                        ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Delivery Charges",
-                            style: Label.Medium12px.copyWith(
-                                color: CustColors.black60),
-                          ),
-                          Text("${subtotal + 20}"),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 18,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Total",
+                              style: Label.Medium12px.copyWith(
+                                  color: CustColors.black60),
+                            ),
+                            Text("\$${subtotal + 20}"),
+                          ],
+                        ),
                       ),
                       CustTextButton(
                           title: "proceed to checkout",
@@ -284,7 +302,12 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                               ),
                             ),
                           ),
-                          onPressed: () {})
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                (MaterialPageRoute(
+                                    builder: (builder) => CheckoutScreen())));
+                          }),
                     ],
                   ),
                 ),

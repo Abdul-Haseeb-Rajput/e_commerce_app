@@ -25,6 +25,7 @@ class _HomeScreenPageViewState extends State<HomeScreenPageView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: CustColors.lightBlue,
         toolbarHeight: MediaQuery.of(context).size.height * .35,
@@ -140,21 +141,36 @@ class _HomeScreenPageViewState extends State<HomeScreenPageView> {
                                 ),
                               ),
                             ),
-                            // favourite button
                             Positioned(
                               top: 180,
                               right: 20,
                               child: GestureDetector(
                                 onTap: () {
-                                  print("fovourite index tapped $index");
                                   setState(() {
-                                    cartItems.add(products[index]);
+                                    // print("fovourite index tapped $index");
+                                    // favouriteList.add(products[index]);
+                                    // print(favouriteList);
+                                    if (products[index]['favourite'] == false) {
+                                      products[index]['favourite'] = true;
+                                      favouriteList.add(products[index]);
+                                      print(favouriteList);
+                                      // print(products[index]['favotrite']);
+                                    } else if (products[index]['favourite'] ==
+                                        true) {
+                                      products[index]['favourite'] = false;
+                                      favouriteList.remove(products[index]);
+                                      print(favouriteList);
+                                      // print(products[index]['favotrite']);
+                                    }
                                   });
-                                  print(cartItems);
                                 },
+                                // favourite icon
                                 child: CircleAvatar(
                                   // change color of fovourute button
-                                  backgroundColor: CustColors.black45,
+                                  backgroundColor:
+                                      products[index]['favourite'] == true
+                                          ? Colors.redAccent
+                                          : CustColors.black45,
                                   foregroundColor: CustColors.black1,
                                   radius: 15,
                                   child: Icon(Icons.favorite_outline_rounded),
