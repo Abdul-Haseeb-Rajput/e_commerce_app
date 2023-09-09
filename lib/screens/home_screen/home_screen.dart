@@ -3,7 +3,7 @@ import 'package:e_commerce_app/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../categories_screen/categories_screen.dart';
-import '../orders_screen/lib/screens/orders_screen/more_screen.dart.dart';
+import '../orders_screen/lib/screens/orders_screen/order_screen.dart';
 import 'home_screen_page.dart';
 
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           HomeScreenPageView(),
           const CategoriesScreen(),
           const FavouriteScreen(),
-          const MoreScreen(),
+          const OrderScreen(),
         ],
       ),
       // extendBody: true,

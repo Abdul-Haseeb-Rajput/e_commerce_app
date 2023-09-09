@@ -185,35 +185,38 @@ class AddCardScreen extends StatelessWidget {
                         ),
                       ),
                       CustTextButton(
-                          title: "Make Payment",
-                          textStyle: Body1.Medium16px.copyWith(
-                              color: CustColors.black1),
-                          buttonStyle: ButtonStyle(
-                            minimumSize: MaterialStatePropertyAll(
-                              Size(MediaQuery.of(context).size.width, 60),
+                        onPressed: () {
+                          orderList.addAll(cartItems);
+                          cartItems.clear();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PaymentSucess(),
                             ),
-                            backgroundColor: const MaterialStatePropertyAll(
-                                CustColors.lightBlue),
-                            side: const MaterialStatePropertyAll(
-                              BorderSide(
-                                width: 2,
-                                color: CustColors.lightBlue,
-                              ),
-                            ),
-                            shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
+                          );
+                        },
+                        title: "Make Payment",
+                        textStyle:
+                            Body1.Medium16px.copyWith(color: CustColors.black1),
+                        buttonStyle: ButtonStyle(
+                          minimumSize: MaterialStatePropertyAll(
+                            Size(MediaQuery.of(context).size.width, 60),
+                          ),
+                          backgroundColor: const MaterialStatePropertyAll(
+                              CustColors.lightBlue),
+                          side: const MaterialStatePropertyAll(
+                            BorderSide(
+                              width: 2,
+                              color: CustColors.lightBlue,
                             ),
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => PaymentSucess(),
-                              ),
-                            );
-                          }),
+                          shape: MaterialStatePropertyAll(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
