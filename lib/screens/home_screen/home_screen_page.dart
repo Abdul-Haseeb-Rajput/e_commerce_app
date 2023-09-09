@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../products_dummy_api.dart';
 import '../../styles/colors.dart';
@@ -152,8 +153,12 @@ class _HomeScreenPageViewState extends State<HomeScreenPageView> {
                                     // print(favouriteList);
                                     if (products[index]['favourite'] == false) {
                                       products[index]['favourite'] = true;
+
                                       favouriteList.add(products[index]);
                                       print(favouriteList);
+                                      Fluttertoast.showToast(
+                                        msg: 'Added to favorites',
+                                      );
                                       // print(products[index]['favotrite']);
                                     } else if (products[index]['favourite'] ==
                                         true) {
