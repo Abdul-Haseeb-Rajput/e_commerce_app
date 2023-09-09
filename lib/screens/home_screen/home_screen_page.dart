@@ -165,6 +165,10 @@ class _HomeScreenPageViewState extends State<HomeScreenPageView> {
                                       products[index]['favourite'] = false;
                                       favouriteList.remove(products[index]);
                                       print(favouriteList);
+                                      Fluttertoast.showToast(
+                                        msg: 'Removed from favorites',
+                                      );
+                                      print(favouriteList);
                                       // print(products[index]['favotrite']);
                                     }
                                   });

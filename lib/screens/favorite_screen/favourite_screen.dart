@@ -51,6 +51,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                           setState(() {
                             if (favouriteList[index]["favourite"] == true) {
                               favouriteList[index]["favourite"] = false;
+                              // favouriteList.removeAt(index);
+                            }
+                            if (favouriteList[index]["favourite"] == false) {
                               favouriteList.removeAt(index);
                             }
                             print(favouriteList);
