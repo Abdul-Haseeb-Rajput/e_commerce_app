@@ -25,10 +25,10 @@ class AppBarStyling extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     backgroundImage: AssetImage("assets/haseeb.jpeg"),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
                   Text(
@@ -47,7 +47,7 @@ class AppBarStyling extends StatelessWidget {
                         // color: CustColors.black90,
                         height: 60,
                         width: 40,
-                        child: Icon(
+                        child: const Icon(
                           IconlyLight.bag,
                           color: CustColors.black1,
                         ),

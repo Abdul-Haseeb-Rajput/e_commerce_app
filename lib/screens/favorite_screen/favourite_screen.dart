@@ -2,8 +2,6 @@ import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:e_commerce_app/styles/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../categories_screen/product_screen.dart';
-
 class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({super.key});
 

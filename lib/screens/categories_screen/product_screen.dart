@@ -7,7 +7,6 @@ import 'package:iconly/iconly.dart';
 import '../../products_dummy_api.dart';
 import '../onboard_screens/widget/cust_text_botton.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../home_screen/home_screen_page.dart';
 
 // ignore: must_be_immutable
 class ProductScreen extends StatefulWidget {
@@ -34,9 +33,6 @@ class _ProductScreenState extends State<ProductScreen> {
     int itForInd = widget.indexForItem;
     int? itforInd2 = widget.indexForCatItem;
     String fromScreen = widget.fromScreen;
-    // List imgLen = products[0]['images'];
-    List imgL = prodsImgs[widget.indexForItem];
-    // List im = prodsImgs[widget.indexForItem];
     List countCond = fromScreen == "homeScreen"
         ? prodsImgs[widget.indexForItem]
         : categories[itForInd][itforInd2]['images'];
@@ -56,7 +52,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: CustColors.black10,
                     child: Icon(
                       Icons.arrow_back_ios_rounded,
@@ -76,27 +72,25 @@ class _ProductScreenState extends State<ProductScreen> {
                       if (fromScreen == "homeScreen") {
                         return GestureDetector(
                           onTap: () {
-                            print("im circle $index");
-                            print("index from previous $itForInd");
-                            print("index from catInd $itforInd2");
-                            print("ind count from cat ");
+                            // print("im circle $index");
+                            // print("index from previous $itForInd");
+                            // print("index from catInd $itforInd2");
+                            // print("ind count from cat ");
                             // print("${categories[itForInd][itforInd2]["title"]}");
                           },
                           child: Container(
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: CustColors.black45,
                               // borderRadius: BorderRadius.circular(8),
                             ),
                             child: CircleAvatar(
-                              backgroundColor: Color.fromARGB(0, 29, 52, 71),
+                              backgroundColor:
+                                  const Color.fromARGB(0, 29, 52, 71),
                               foregroundImage: NetworkImage(
                                   "${prodsImgs[widget.indexForItem][index]}",
                                   scale: 0.1),
                             ),
-                            // foregroundImage:
-                            //     NetworkImage("${imagesWithoutBrackets[index]}"),
-                            // radius: MediaQuery.of(context).size.width * .32,
                           ),
                         );
                       } else {
@@ -108,26 +102,21 @@ class _ProductScreenState extends State<ProductScreen> {
                             // print("${categories[itForInd][itforInd2]["title"]}");
                           },
                           child: Container(
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: CustColors.black45,
                               // borderRadius: BorderRadius.circular(8),
                             ),
                             child: CircleAvatar(
-                              backgroundColor: Color.fromARGB(0, 29, 52, 71),
+                              backgroundColor:
+                                  const Color.fromARGB(0, 29, 52, 71),
                               foregroundImage: NetworkImage(
                                   "${categories[itForInd][itforInd2]['images'][index]}",
                                   scale: 0.1),
                             ),
-                            // foregroundImage:
-                            //     NetworkImage("${imagesWithoutBrackets[index]}"),
-                            // radius: MediaQuery.of(context).size.width * .32,
                           ),
                         );
                       }
-                      // String imagesWithoutBrackets =
-                      //     (products[indexForItem]["images"] as List<String>)
-                      //         .join(',');
                     },
                   ),
                 ),
@@ -140,11 +129,11 @@ class _ProductScreenState extends State<ProductScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => AddToCartScreen()));
+                              builder: (context) => const AddToCartScreen()));
                     },
                     child: Stack(
                       children: [
-                        Positioned(
+                        const Positioned(
                           bottom: 12,
                           left: 12,
                           child: Icon(
@@ -173,7 +162,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             SmoothPageIndicator(
@@ -215,7 +204,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Row(
@@ -240,7 +229,7 @@ class _ProductScreenState extends State<ProductScreen> {
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                       ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     if (fromScreen == "homeScreen")
@@ -289,7 +278,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
 
@@ -298,16 +287,16 @@ class _ProductScreenState extends State<ProductScreen> {
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.star, color: CustColors.lightYellow),
-                Icon(Icons.star, color: CustColors.lightYellow),
-                Icon(Icons.star, color: CustColors.lightYellow),
-                Icon(Icons.star, color: CustColors.lightYellow),
-                Icon(
+                const Icon(Icons.star, color: CustColors.lightYellow),
+                const Icon(Icons.star, color: CustColors.lightYellow),
+                const Icon(Icons.star, color: CustColors.lightYellow),
+                const Icon(Icons.star, color: CustColors.lightYellow),
+                const Icon(
                   Icons.star_half_sharp,
                   fill: 1,
                   color: CustColors.lightYellow,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
                 Text(
@@ -316,7 +305,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             //
@@ -335,8 +324,8 @@ class _ProductScreenState extends State<ProductScreen> {
                       Size(MediaQuery.of(context).size.width * .4, 60),
                     ),
                     backgroundColor:
-                        MaterialStatePropertyAll(CustColors.black1),
-                    side: MaterialStatePropertyAll(
+                        const MaterialStatePropertyAll(CustColors.black1),
+                    side: const MaterialStatePropertyAll(
                       BorderSide(
                         width: 2,
                         color: CustColors.lightBlue,
@@ -366,8 +355,8 @@ class _ProductScreenState extends State<ProductScreen> {
                       Size(MediaQuery.of(context).size.width * .46, 60),
                     ),
                     backgroundColor:
-                        MaterialStatePropertyAll(CustColors.lightBlue),
-                    side: MaterialStatePropertyAll(
+                        const MaterialStatePropertyAll(CustColors.lightBlue),
+                    side: const MaterialStatePropertyAll(
                       BorderSide(
                         width: 2,
                         color: CustColors.lightBlue,
@@ -383,7 +372,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Column(
@@ -401,7 +390,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           style: Heading4.SemiBold18px.copyWith(
                               color: CustColors.black100),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         if (fromScreen == "homeScreen")
@@ -416,12 +405,12 @@ class _ProductScreenState extends State<ProductScreen> {
                             textAlign: TextAlign.justify,
                             style: Body2.Medium14px.copyWith(),
                           ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         ListView.separated(
                           shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: 2,
                           separatorBuilder: (context, index) {
                             return Container(
@@ -432,7 +421,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           },
                           itemBuilder: (context, index) {
                             return ExpansionTile(
-                              title: Text("Details"),
+                              title: const Text("Details"),
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,

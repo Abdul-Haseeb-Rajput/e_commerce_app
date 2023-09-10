@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:e_commerce_app/screens/checkout_screen/checkout_screen.dart';
-import 'package:e_commerce_app/screens/home_screen/appbar_styling_widget.dart';
 import 'package:e_commerce_app/screens/onboard_screens/widget/cust_text_botton.dart';
 import 'package:e_commerce_app/styles/colors.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
