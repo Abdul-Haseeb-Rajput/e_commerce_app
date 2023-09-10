@@ -23,9 +23,20 @@ class AppBarStyling extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Hello, Haseeb",
-                style: Heading3.Medium20px.copyWith(color: CustColors.black1),
+              Row(
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage("assets/haseeb.jpeg"),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    "Hello, Haseeb",
+                    style:
+                        Heading3.Medium20px.copyWith(color: CustColors.black1),
+                  ),
+                ],
               ),
               GestureDetector(
                 onTap: onTap,

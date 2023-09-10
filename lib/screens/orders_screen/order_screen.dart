@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/products_dummy_api.dart';
 import 'package:e_commerce_app/screens/Widgets/top_bar_tile.dart';
+import 'package:e_commerce_app/screens/orders_screen/track_order_screen.dart';
 import 'package:e_commerce_app/styles/colors.dart';
 import 'package:e_commerce_app/styles/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,11 @@ class OrderScreen extends StatelessWidget {
         padding: const EdgeInsets.only(left: 16, right: 16, top: 24),
         child: Column(
           children: [
-            TopBarWidget(
+            const TopBarWidget(
               title: 'Orders',
+            ),
+            SizedBox(
+              height: 16,
             ),
             Expanded(
               child: ListView.separated(
@@ -39,7 +43,7 @@ class OrderScreen extends StatelessWidget {
                           ),
                           title: Text("${orderList[index]["title"]}"),
                           subtitle: Text("\$${orderList[index]["price"]}"),
-                          trailing: Text("ID: #434234"),
+                          trailing: const Text("ID: #434234"),
                         ),
                         // for left side (rider)
                         Row(
@@ -61,6 +65,14 @@ class OrderScreen extends StatelessWidget {
                                             color: CustColors.lightYellow,
                                             borderRadius:
                                                 BorderRadius.circular(8)),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          child: Image.asset(
+                                            "assets/driver.jpg",
+                                            fit: BoxFit.fitWidth,
+                                          ),
+                                        ),
                                       ),
                                       Positioned(
                                         bottom: 30,
@@ -73,7 +85,7 @@ class OrderScreen extends StatelessWidget {
                                                 spreadRadius: 8,
                                                 blurRadius: 20,
                                                 color: Color.fromARGB(
-                                                    169, 96, 109, 118),
+                                                    216, 96, 109, 118),
                                               )
                                             ],
                                             color: CustColors.black45,
@@ -86,9 +98,9 @@ class OrderScreen extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      Positioned(
+                                      const Positioned(
                                         bottom: 0,
-                                        child: Text("Meet Our Driver, abc"),
+                                        child: Text("Meet Our Driver, Tom"),
                                       ),
                                     ],
                                   ),
@@ -123,13 +135,16 @@ class OrderScreen extends StatelessWidget {
                                         ],
                                       ),
                                       ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          "Track Order",
-                                        ),
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              (MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      TrackOrderScreen())));
+                                        },
                                         style: ButtonStyle(
                                           backgroundColor:
-                                              MaterialStatePropertyAll(
+                                              const MaterialStatePropertyAll(
                                                   CustColors.lightBlue),
                                           shape: MaterialStatePropertyAll(
                                             RoundedRectangleBorder(
@@ -137,9 +152,13 @@ class OrderScreen extends StatelessWidget {
                                                   BorderRadius.circular(22),
                                             ),
                                           ),
-                                          fixedSize: MaterialStatePropertyAll(
+                                          fixedSize:
+                                              const MaterialStatePropertyAll(
                                             Size(120, 60),
                                           ),
+                                        ),
+                                        child: const Text(
+                                          "Track Order",
                                         ),
                                       ),
                                     ],
@@ -154,7 +173,7 @@ class OrderScreen extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {
-                  return Divider(
+                  return const Divider(
                     height: 1, // Adjust the thickness of the line as needed
                     color: Colors.grey, // You can set the color of the line
                   );
