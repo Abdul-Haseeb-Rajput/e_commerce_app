@@ -6,9 +6,9 @@ import '../categories_screen/categories_screen.dart';
 import '../orders_screen/order_screen.dart';
 import 'home_screen_page.dart';
 
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconly/iconly.dart';
+
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,17 +18,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // int currentPageIndex = 0;
-  // final List<Widget> _pages = [
-  //   HomeScreenPageView(),
-  //   CategoriesScreen(),
-  //   FavouriteScreen(),
-  //   MoreScreen(),
-  // ];
-
   int _selectedIndex = 0;
   final PageController _pageController = PageController();
 
+  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //   toolbarHeight: MediaQuery.of(context).size.height * .35,
       //   flexibleSpace: AppBarStyling(),
       // ),
+      extendBody: true,
       body: PageView(
         physics: NeverScrollableScrollPhysics(),
         controller: _pageController,
@@ -55,44 +49,39 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       // extendBody: true,
       // extendBodyBehindAppBar: true,
-      bottomNavigationBar: ConvexAppBar(
-        elevation: 0,
-        style: TabStyle.reactCircle,
+      bottomNavigationBar: CurvedNavigationBar(
+        key: _bottomNavigationKey,
         onTap: _onTappedBar,
-        activeColor: CustColors.darkYellow,
-        initialActiveIndex: _selectedIndex,
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
-        // color: CustColors.black1,
+        index: _selectedIndex,
+        height: 55.0,
         items: const [
-          TabItem(
-            title: "Home",
-            icon: Icon(
-              IconlyLight.home,
-              color: CustColors.bottomNavBut,
-            ),
+          Icon(
+            IconlyLight.home,
+            size: 20,
+            // color: CustColors.bottomNavBut,
           ),
-          TabItem(
-            title: "Categories",
-            icon: Icon(
-              IconlyLight.category,
-              color: CustColors.bottomNavBut,
-            ),
+          Icon(
+            IconlyLight.category,
+            // color: CustColors.bottomNavBut,
+            size: 20,
           ),
-          TabItem(
-            title: "Favourites",
-            icon: Icon(
-              IconlyLight.heart,
-              color: CustColors.bottomNavBut,
-            ),
+          Icon(
+            IconlyLight.heart,
+            // color: CustColors.bottomNavBut,
+            size: 20,
           ),
-          TabItem(
-            title: "more",
-            icon: Icon(
-              Icons.local_shipping_outlined,
-              color: CustColors.bottomNavBut,
-            ),
+          Icon(
+            Icons.local_shipping_outlined,
+            // color: CustColors.bottomNavBut,
+            size: 20,
           ),
         ],
+        color: CustColors.lightBlue,
+        buttonBackgroundColor: Colors.white,
+        backgroundColor: Colors.white,
+        animationCurve: Curves.easeIn,
+        animationDuration: Duration(milliseconds: 500),
+        letIndexChange: (index) => true,
       ),
     );
   }
