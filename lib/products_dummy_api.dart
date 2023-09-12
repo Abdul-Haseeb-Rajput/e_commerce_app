@@ -1563,3 +1563,9 @@ bool isFavourite = false;
 
 // items will be saved/popped from cartItems to here in orderList after completing payment
 List orderList = [];
+
+// home address
+List address = [
+  ['Home Address', 'abc st, xyz city'],
+  ['Office Address', 'xyz st, xyz office']
+];

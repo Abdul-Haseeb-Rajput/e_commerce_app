@@ -1,6 +1,3 @@
-// import 'package:e_commerce_app/screens/categories_screen/view_by_categories.dart';
-// import 'package:e_commerce_app/screens/add_to_cart.dart/cart_screen.dart';
-// import 'package:e_commerce_app/screens/categories_screen/product_screen.dart';
 import 'package:e_commerce_app/screens/checkout_screen/checkout_screen.dart';
 import 'package:flutter/material.dart';
 
